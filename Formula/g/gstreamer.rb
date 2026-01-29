@@ -2,6 +2,7 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  revision 1
 
   stable do
     url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.26.10/gstreamer-1.26.10.tar.bz2"
@@ -21,6 +22,12 @@ class Gstreamer < Formula
     patch do
       url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/commit/a77a4f3f5388cde3c4592d1193ae82692fd2bdbb.diff"
       sha256 "a874f85318ea56abdd19381b9ada24f93dfcc9ad4397e5591ca20e101152f0be"
+    end
+
+    # Add stv-av1 4.x support
+    patch do
+      url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/commit/a6cdd54b4d8f283cee21b7f5c60258d672f23f95.diff"
+      sha256 "e043df46185e953745e9ddf77c1c69881e49530d38f927554232d9bc90ae62eb"
     end
   end
 
